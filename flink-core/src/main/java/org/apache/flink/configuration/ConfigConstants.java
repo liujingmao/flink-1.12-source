@@ -1720,7 +1720,8 @@ public final class ConfigConstants {
     // ----------------------------- Environment Variables ----------------------------
 
     /** The environment variable name which contains the location of the configuration directory. */
-    public static final String ENV_FLINK_CONF_DIR = "FLINK_CONF_DIR";
+    public static final String
+            ENV_FLINK_CONF_DIR = "FLINK_CONF_DIR";
 
     /** The environment variable name which contains the location of the lib folder. */
     public static final String ENV_FLINK_LIB_DIR = "FLINK_LIB_DIR";
