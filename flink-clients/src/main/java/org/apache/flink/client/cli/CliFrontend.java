@@ -249,6 +249,7 @@ public class CliFrontend {
     }
 
     /** Get all provided libraries needed to run the program from the ProgramOptions. */
+    /**/
     private List<URL> getJobJarAndDependencies(ProgramOptions programOptions)
             throws CliArgsException {
         String entryPointClass = programOptions.getEntryPointClassName();
@@ -1133,21 +1134,22 @@ public class CliFrontend {
         }
     }
 
-    /** Submits the job based on the arguments. */
+    /** Submits the job based on the arguments.
+     * 基于参数提交作业 */
     public static void main(final String[] args) {
         EnvironmentInformation.logEnvironmentInfo(LOG, "Command Line Client", args);
 
-        // 1. find the configuration directory
+        // 1. find the configuration directory 从环境中获取配置目录
         final String configurationDirectory = getConfigurationDirectoryFromEnv();
 
-        // 2. load the global configuration
+        // 2. load the global configuration 加载全局配置
         final Configuration configuration =
                 GlobalConfiguration.loadConfiguration(configurationDirectory);
 
-        // 3. load the custom command lines
+        // 3. load the custom command lines 加载用户自定义的命令
         final List<CustomCommandLine> customCommandLines =
                 loadCustomCommandLines(configuration, configurationDirectory);
-
+        //
         int retCode = 31;
         try {
             final CliFrontend cli = new CliFrontend(configuration, customCommandLines);

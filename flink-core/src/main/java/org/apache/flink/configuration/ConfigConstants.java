@@ -29,6 +29,7 @@ import static org.apache.flink.configuration.ConfigOptions.key;
 /**
  * This class contains all constants for the configuration. That includes the configuration keys and
  * the default values.
+ * 该类包含配置的所有恒定值，以<k,v> 的格式</k,v>，其中包含配置键和对应的默认值。
  */
 @Public
 @SuppressWarnings("unused")
