@@ -120,14 +120,24 @@ public class CliFrontend {
         this(configuration, new DefaultClusterClientServiceLoader(), customCommandLines);
     }
 
+    /**
+     * 这个构造函数这么长
+     * @param configuration
+     * @param clusterClientServiceLoader
+     * @param customCommandLines
+     */
     public CliFrontend(
             Configuration configuration,
             ClusterClientServiceLoader clusterClientServiceLoader,
             List<CustomCommandLine> customCommandLines) {
+        //检查构造函数参数是否为空
         this.configuration = checkNotNull(configuration);
         this.customCommandLines = checkNotNull(customCommandLines);
         this.clusterClientServiceLoader = checkNotNull(clusterClientServiceLoader);
 
+        /**
+         *
+         */
         FileSystem.initialize(
                 configuration, PluginUtils.createPluginManagerFromRootFolder(configuration));
 
