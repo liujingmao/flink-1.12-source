@@ -26,12 +26,18 @@ import org.apache.flink.util.StringUtils;
  * TaskManager. The ID is assigned once the JobManager (or its SlotPool) first requests the slot and
  * is constant across retries.
  *
+ *
  * <p>This ID is used by the TaskManager and ResourceManager to track and synchronize which slots
  * are allocated to which JobManager and which are free.
+ *
+ * TM和RM使用这个ID追踪和同步被分配到jm的slots和未被分配的slot
  *
  * <p>In contrast to this AllocationID, the {@link org.apache.flink.runtime.jobmaster.SlotRequestId}
  * is used when a task requests a logical slot from the SlotPool. Multiple logical slot requests can
  * map to one physical slot request (due to slot sharing).
+ *
+ *
+ *
  */
 public class AllocationID extends AbstractID {
 
